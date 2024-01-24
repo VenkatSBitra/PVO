@@ -11,8 +11,8 @@ dependencies:
   - torchaudio
   - torchvision
   - open3d
-  - pytorch
-  - cudatoolkit
+  - pytorch=1.9.0
+  - cudatoolkit=11.1
   - tensorboard
   - scipy
   - opencv
