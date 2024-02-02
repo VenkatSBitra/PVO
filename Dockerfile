@@ -45,28 +45,28 @@ RUN cd / && wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-latest-L
     /opt/conda/bin/conda config --set ssl_verify no && \
     /opt/conda/bin/conda config --add channels conda-forge 
 
-# RUN cd / && git clone https://github.com/VenkatSBitra/PVO.git
+RUN cd / && git clone https://github.com/VenkatSBitra/PVO.git
 
-# RUN cd /PVO &&\
-#     conda env create -y -f VO_Module/environment.yaml
-#     # conda activate droidenv &&\
+RUN cd /PVO &&\
+    conda env create -y -f VO_Module/environment.yaml
+    # conda activate droidenv &&\
 
-# ENV PATH $PATH:/opt/conda/envs/droidenv/bin
+ENV PATH $PATH:/opt/conda/envs/droidenv/bin
 
-# # SHELL ["conda", "run", "-n", "droidenv", "/bin/bash", "-c"]
-# RUN conda init bash &&\
-#     echo "conda activate droidenv" >> ~/.bashrc &&\
-#     /bin/bash -c "source ~/.bashrc"
+# SHELL ["conda", "run", "-n", "droidenv", "/bin/bash", "-c"]
+RUN conda init bash &&\
+    echo "conda activate droidenv" >> ~/.bashrc &&\
+    /bin/bash -c "source ~/.bashrc"
 
-# RUN pip install evo --upgrade --no-binary evo &&\
-#     pip install gdown
+RUN pip install evo --upgrade --no-binary evo &&\
+    pip install gdown
 
 # # RUN conda activate droidenv &&\
 #     # conda install -y pytorch==1.9.0 torchvision cudatoolkit=11.1 -c pytorch -c nvidia &&\
-# RUN python -m pip install 'git+https://github.com/facebookresearch/detectron2.git' &&\
-#     cd /PVO && python -m pip install -e VPS_Module &&\
-#     pip install git+https://github.com/cocodataset/panopticapi.git
+RUN python -m pip install 'git+https://github.com/facebookresearch/detectron2.git' &&\
+    cd /PVO && python -m pip install -e VPS_Module &&\
+    pip install git+https://github.com/cocodataset/panopticapi.git
 
-# RUN pip install ninja &&\
-#     cd /PVO/VO_Module && python setup.py install
+RUN pip install ninja &&\
+    cd /PVO/VO_Module && python setup.py install
 
